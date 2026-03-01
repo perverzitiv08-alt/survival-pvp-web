@@ -4,34 +4,49 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Survival PvP</title>
+
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&display=swap" rel="stylesheet">
 
 <style>
 body{
 margin:0;
 font-family:'Cinzel', serif;
-background:linear-gradient(to bottom,#0f0f0f,#1a1a1a,#0f0f0f);
 color:white;
 text-align:center;
+background:url("background.jpg") no-repeat center center fixed;
+background-size:cover;
+backdrop-filter:brightness(0.7);
 }
 
-.hero{
-padding:120px 20px;
-background:radial-gradient(circle at center,#2b1a0f,#0f0f0f);
-box-shadow:inset 0 0 200px black;
+.overlay{
+background:rgba(0,0,0,0.75);
+min-height:100vh;
+padding-bottom:80px;
 }
 
 h1{
 font-size:70px;
 color:#ffae00;
 text-shadow:0 0 20px orange,0 0 40px red;
-margin-bottom:20px;
+margin:0;
+padding-top:120px;
 }
 
 .subtitle{
 font-size:22px;
 color:#ddd;
-margin-bottom:30px;
+margin:20px 0;
+}
+
+.section{
+padding:100px 20px;
+}
+
+h2{
+font-size:45px;
+color:#ff6a00;
+text-shadow:0 0 15px orange;
+margin-bottom:40px;
 }
 
 .button{
@@ -45,6 +60,7 @@ border:none;
 cursor:pointer;
 box-shadow:0 0 20px orange;
 transition:0.3s;
+text-decoration:none;
 }
 
 .button:hover{
@@ -52,56 +68,28 @@ transform:scale(1.1);
 box-shadow:0 0 35px red;
 }
 
-.section{
-padding:90px 20px;
-border-top:2px solid #222;
-}
-
-h2{
-font-size:45px;
-color:#ff6a00;
-text-shadow:0 0 15px orange;
-margin-bottom:30px;
-}
-
-.map{
-width:90%;
-height:600px;
-border-radius:15px;
-border:4px solid #ff6a00;
-box-shadow:0 0 30px orange;
-}
-
-.card{
-max-width:900px;
-margin:auto;
-font-size:20px;
-line-height:1.6;
-color:#ddd;
-}
-
 .discord-btn{
 background:#5865F2;
 box-shadow:0 0 25px #5865F2;
 }
 
-.form-box{
-max-width:600px;
-margin:auto;
+.map-preview{
+width:80%;
+max-width:900px;
+border-radius:15px;
+border:4px solid #ff6a00;
+box-shadow:0 0 30px orange;
+cursor:pointer;
+transition:0.3s;
 }
 
-input,textarea{
-width:100%;
-padding:15px;
-margin:10px 0;
-border-radius:10px;
-border:none;
-font-size:16px;
+.map-preview:hover{
+transform:scale(1.05);
 }
 
 footer{
 padding:40px;
-background:#000;
+background:rgba(0,0,0,0.9);
 color:#aaa;
 }
 </style>
@@ -109,56 +97,55 @@ color:#aaa;
 
 <body>
 
-<div class="hero">
+<div class="overlay">
+
 <h1>🔥 SURVIVAL PVP 🔥</h1>
 <div class="subtitle">Bojuj • Přežij • Dominuj</div>
+
 <p><strong>IP:</strong> cz1.helkor.eu:41004</p>
 <p><strong>Verze:</strong> 1.21.11</p>
-<button class="button" onclick="copyIP()">ZKOPÍROVAT IP</button>
-</div>
 
+<button class="button" onclick="copyIP()">ZKOPÍROVAT IP</button>
+
+<!-- DYNMAP -->
 <div class="section">
 <h2>🗺️ DYNMAPA</h2>
-<div class="card">
-Sleduj svět serveru v reálném čase!
-</div>
-<br>
-<iframe class="map" src="http://cz1.helkor.eu:41185"></iframe>
+
+<a href="http://cz1.helkor.eu:41185" target="_blank">
+<img src="background.jpg" class="map-preview" alt="Dynmapa">
+</a>
+
+<br><br>
+
+<a href="http://cz1.helkor.eu:41185" target="_blank" class="button">
+ZOBRAZIT DYNMAPU
+</a>
 </div>
 
+<!-- VOICECHAT -->
 <div class="section">
 <h2>🎤 VOICECHAT</h2>
-<div class="card">
-Používáme proximity voicechat.  
-Mluv přímo ve hře, plánuj přepady a vytvářej aliance jako ve skutečné válce.
-</div>
+<p>Používáme proximity voicechat.<br>
+Mluv přímo ve hře a plánuj strategie jako skutečný válečník.</p>
 </div>
 
+<!-- KOMUNITA -->
 <div class="section">
 <h2>👥 KOMUNITA</h2>
-<div class="card">
-Aktivní hráči • Eventy • Přátelská atmosféra  
-Staň se součástí legendy.
-</div>
+<p>Aktivní hráči • Eventy • Přátelská atmosféra</p>
+
 <br>
+
 <a href="https://discord.gg/t4Caja7V7" target="_blank">
 <button class="button discord-btn">PŘIPOJIT SE NA DISCORD</button>
 </a>
 </div>
 
-<div class="section">
-<h2>📝 NÁBOR</h2>
-<div class="form-box">
-<input type="text" placeholder="Tvůj Minecraft nick">
-<input type="number" placeholder="Věk">
-<textarea placeholder="Proč chceš hrát na našem serveru?"></textarea>
-<button class="button">Odeslat (doporučuju napojit na Google Forms)</button>
-</div>
-</div>
-
 <footer>
-© 2026 Survival PvP Server | Vytvořeno pro nejlepší komunitu 🔥
+© 2026 Survival PvP Server 🔥
 </footer>
+
+</div>
 
 <script>
 function copyIP(){
