@@ -1,158 +1,66 @@
 <!DOCTYPE html>
 <html lang="cs">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Survival PvP</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&display=swap" rel="stylesheet">
-
-<style>
-body{
-margin:0;
-font-family:'Cinzel', serif;
-color:white;
-text-align:center;
-background:url("background.jpg") no-repeat center center fixed;
-background-size:cover;
-backdrop-filter:brightness(0.7);
-}
-
-.overlay{
-background:rgba(0,0,0,0.75);
-min-height:100vh;
-padding-bottom:80px;
-}
-
-h1{
-font-size:70px;
-color:#ffae00;
-text-shadow:0 0 20px orange,0 0 40px red;
-margin:0;
-padding-top:120px;
-}
-
-.subtitle{
-font-size:22px;
-color:#ddd;
-margin:20px 0;
-}
-
-.section{
-padding:100px 20px;
-}
-
-h2{
-font-size:45px;
-color:#ff6a00;
-text-shadow:0 0 15px orange;
-margin-bottom:40px;
-}
-
-.button{
-display:inline-block;
-padding:18px 45px;
-font-size:20px;
-border-radius:12px;
-background:linear-gradient(45deg,#ff6a00,#ff0000);
-color:white;
-border:none;
-cursor:pointer;
-box-shadow:0 0 20px orange;
-transition:0.3s;
-text-decoration:none;
-}
-
-.button:hover{
-transform:scale(1.1);
-box-shadow:0 0 35px red;
-}
-
-.discord-btn{
-background:#5865F2;
-box-shadow:0 0 25px #5865F2;
-}
-
-.map-preview{
-width:80%;
-max-width:900px;
-border-radius:15px;
-border:4px solid #ff6a00;
-box-shadow:0 0 30px orange;
-cursor:pointer;
-transition:0.3s;
-}
-
-.map-preview:hover{
-transform:scale(1.05);
-}
-
-footer{
-padding:40px;
-background:rgba(0,0,0,0.9);
-color:#aaa;
-}
-</style>
+    <meta charset="UTF-8">
+    <title>Můj Minecraft Server</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.cdnfonts.com/css/minecraft-4" rel="stylesheet">
 </head>
-
 <body>
 
-<div class="overlay">
+    <header class="hero">
+        <h1>PŘIPOJ SE TEĎ!</h1>
+        <p class="ip">play.mujserver.cz</p>
+        <a href="#dynmap" class="btn">ZOBRAZIT MAPU</a>
+    </header>
 
-<h1>🔥 SURVIVAL PVP 🔥</h1>
-<div class="subtitle">Bojuj • Přežij • Dominuj</div>
+    <section class="section">
+        <h2>O SERVERU</h2>
+        <div class="panel">
+            <img src="assets/dynmap.jpg" alt="Dynmap">
+            <p>
+                Mrkni na naši dynmapu a sleduj, kde a co se děje na serveru v reálném čase!
+            </p>
+            <a href="#" class="btn">ZOBRAZIT MAPU</a>
+        </div>
+    </section>
 
-<p><strong>IP:</strong> cz1.helkor.eu:41004</p>
-<p><strong>Verze:</strong> 1.21.11</p>
+    <section class="section dark">
+        <h2>VOICECHAT</h2>
+        <div class="panel">
+            <p>
+                Používáme proximity voicechat, takže můžeš s ostatními hráči mluvit přímo ve hře.
+            </p>
+            <ul>
+                <li>Lehké domlouvání týmů</li>
+                <li>Komunikace přináší nové možnosti</li>
+                <li>Více zábavy!</li>
+            </ul>
+        </div>
+    </section>
 
-<button class="button" onclick="copyIP()">ZKOPÍROVAT IP</button>
+    <section class="section">
+        <h2>KOMUNITA</h2>
+        <div class="stats">
+            <div class="stat">
+                <h3>50+</h3>
+                <p>Aktivních hráčů</p>
+            </div>
+            <div class="stat">
+                <h3>200+</h3>
+                <p>Postavených staveb</p>
+            </div>
+            <div class="stat">
+                <h3>10+</h3>
+                <p>Adminů</p>
+            </div>
+        </div>
+    </section>
 
-<!-- DYNMAP -->
-<div class="section">
-<h2>🗺️ DYNMAPA</h2>
-
-<a href="http://cz1.helkor.eu:41185" target="_blank">
-<img src="background.jpg" class="map-preview" alt="Dynmapa">
-</a>
-
-<br><br>
-
-<a href="http://cz1.helkor.eu:41185" target="_blank" class="button">
-ZOBRAZIT DYNMAPU
-</a>
-</div>
-
-<!-- VOICECHAT -->
-<div class="section">
-<h2>🎤 VOICECHAT</h2>
-<p>Používáme proximity voicechat.<br>
-Mluv přímo ve hře a plánuj strategie jako skutečný válečník.</p>
-</div>
-
-<!-- KOMUNITA -->
-<div class="section">
-<h2>👥 KOMUNITA</h2>
-<p>Aktivní hráči • Eventy • Přátelská atmosféra</p>
-
-<br>
-
-<a href="https://discord.gg/t4Caja7V7" target="_blank">
-<button class="button discord-btn">PŘIPOJIT SE NA DISCORD</button>
-</a>
-</div>
-
-<footer>
-© 2026 Survival PvP Server 🔥
-</footer>
-
-</div>
-
-<script>
-function copyIP(){
-navigator.clipboard.writeText("cz1.helkor.eu:41004");
-alert("IP zkopírována! Vlož ji do Minecraftu.");
-}
-</script>
+    <section class="discord">
+        <h2>PŘIPOJ SE K NÁM NA DISCORDU!</h2>
+        <a href="#" class="btn discord-btn">PŘIPOJIT SE</a>
+    </section>
 
 </body>
 </html>
