@@ -2,162 +2,118 @@
 <html lang="cs">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Neon Survival PvP</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;800&display=swap" rel="stylesheet">
+<title>Helkor Minecraft Server</title>
 
 <style>
-body{
-margin:0;
-font-family:'Orbitron', sans-serif;
-background:linear-gradient(135deg,#0f0c29,#1a1a2e,#000);
-color:white;
-text-align:center;
-overflow-x:hidden;
+body {
+  margin: 0;
+  font-family: Arial;
+  background: url('https://wallpapercave.com/wp/wp2757874.jpg') no-repeat center/cover;
+  color: white;
 }
 
-/* NEON BACKGROUND EFFECT */
-body::before{
-content:"";
-position:fixed;
-top:0;
-left:0;
-width:100%;
-height:100%;
-background:radial-gradient(circle at 30% 30%, rgba(255,0,150,0.3), transparent 50%),
-radial-gradient(circle at 70% 70%, rgba(0,255,255,0.3), transparent 50%);
-z-index:-1;
+.overlay {
+  background: rgba(0,0,0,0.75);
+  min-height: 100vh;
+  padding: 20px;
+  text-align: center;
 }
 
-.section{
-padding:100px 20px;
+h1 {
+  font-size: 50px;
 }
 
-h1{
-font-size:60px;
-color:#ff4df0;
-text-shadow:0 0 10px #ff4df0, 0 0 20px #ff4df0, 0 0 40px #00f7ff;
-margin-top:120px;
+.box {
+  background: rgba(0,0,0,0.6);
+  padding: 20px;
+  margin: 20px auto;
+  border-radius: 15px;
+  width: 80%;
 }
 
-.subtitle{
-font-size:22px;
-color:#00f7ff;
-text-shadow:0 0 10px #00f7ff;
-margin-bottom:30px;
+button {
+  padding: 15px 25px;
+  margin: 10px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 16px;
 }
 
-h2{
-font-size:40px;
-color:#00f7ff;
-text-shadow:0 0 15px #00f7ff;
-margin-bottom:40px;
+.copy { background: orange; }
+.discord { background: #5865F2; color: white; }
+.apply { background: green; color: white; }
+
+input, textarea {
+  width: 80%;
+  padding: 10px;
+  margin: 5px;
+  border-radius: 8px;
+  border: none;
 }
 
-/* BUTTON STYLE */
-.button{
-display:inline-block;
-padding:18px 45px;
-font-size:18px;
-border-radius:10px;
-background:linear-gradient(45deg,#ff00aa,#00f7ff);
-color:white;
-border:none;
-cursor:pointer;
-box-shadow:0 0 15px #ff00aa,0 0 30px #00f7ff;
-transition:0.3s;
-text-decoration:none;
+iframe {
+  border-radius: 15px;
 }
 
-.button:hover{
-transform:scale(1.1);
-box-shadow:0 0 25px #ff00aa,0 0 45px #00f7ff;
-}
-
-/* CARD STYLE */
-.card{
-max-width:900px;
-margin:auto;
-font-size:18px;
-line-height:1.6;
-background:rgba(0,0,0,0.6);
-padding:40px;
-border-radius:10px;
-box-shadow:0 0 20px #ff00aa,0 0 30px #00f7ff;
-}
-
-.map-box{
-margin-top:30px;
-}
-
-.map-button{
-margin-top:20px;
-display:inline-block;
-}
-
-footer{
-padding:40px;
-background:#000;
-color:#888;
-margin-top:80px;
+.news {
+  text-align: left;
 }
 </style>
 </head>
 
 <body>
 
-<!-- HERO -->
-<h1>⚡ SURVIVAL PVP ⚡</h1>
-<div class="subtitle">Bojuj • Přežij • Dominuj</div>
+<div class="overlay">
 
-<p><strong>IP:</strong> cz1.helkor.eu:41004</p>
-<p><strong>Verze:</strong> 1.21.11</p>
+<h1>🎮 HELKOR SERVER</h1>
 
-<button class="button" onclick="copyIP()">ZKOPÍROVAT IP</button>
+<div class="box">
+<h2 id="players">Načítám hráče...</h2>
+<h2>IP: cz1.helkor.eu:41004</h2>
 
-<!-- DYNMAP -->
-<div class="section">
-<h2>🗺️ DYNMAPA</h2>
-
-<div class="card">
-Sleduj svět serveru v reálném čase.
-<br><br>
-<a href="http://cz1.helkor.eu:41185" target="_blank" class="button map-button">
-OTEVŘÍT DYNMAPU
-</a>
-</div>
+<button class="copy" onclick="copyIP()">📋 Kopírovat IP</button>
+<button class="discord" onclick="window.open('https://discord.gg/t4Caja7V7')">💬 Discord</button>
 </div>
 
-<!-- VOICECHAT -->
-<div class="section">
-<h2>🎤 VOICECHAT</h2>
-<div class="card">
-Používáme proximity voicechat.  
-Mluv přímo ve hře, plánuj přepady a vytvářej aliance jako ve skutečné válce.
-</div>
+<div class="box">
+<h2>📋 Přihláška do týmu</h2>
+
+<form action="https://formspree.io/f/tvojeID" method="POST">
+<input type="text" name="nick" placeholder="Tvůj nick" required><br>
+<input type="text" name="pozice" placeholder="Builder/Admin/Helper" required><br>
+<textarea name="text" placeholder="Proč chceš do týmu?" required></textarea><br>
+<button class="apply" type="submit">Odeslat</button>
+</form>
 </div>
 
-<!-- KOMUNITA -->
-<div class="section">
-<h2>👥 KOMUNITA</h2>
-<div class="card">
-Aktivní hráči • Eventy • Přátelská atmosféra  
-<br><br>
-<a href="https://discord.gg/t4Caja7V7" target="_blank" class="button">
-PŘIPOJIT SE NA DISCORD
-</a>
-</div>
+<div class="box">
+<h2>🗺️ Dynmapa</h2>
+<iframe src="http://cz1.helkor.eu:41185" width="100%" height="400"></iframe>
 </div>
 
-<footer>
-© 2026 Neon Survival PvP ⚡
-</footer>
+<div class="box news">
+<h2>📰 Novinky</h2>
+<p>🔥 Server spuštěn!</p>
+<p>⚔️ Připravujeme nové eventy</p>
+<p>👑 Nabíráme Adminy a Helpery</p>
+</div>
+
+</div>
 
 <script>
-function copyIP(){
-navigator.clipboard.writeText("cz1.helkor.eu:41004");
-alert("IP zkopírována do schránky!");
+// Minecraft hráči
+fetch("https://api.mcsrvstat.us/2/cz1.helkor.eu:41004")
+.then(res => res.json())
+.then(data => {
+  document.getElementById("players").innerText =
+    "Hráči Online: " + data.players.online + " / " + data.players.max;
+});
+
+// Kopírování IP
+function copyIP() {
+  navigator.clipboard.writeText("cz1.helkor.eu:41004");
+  alert("IP zkopírována!");
 }
 </script>
 
